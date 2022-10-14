@@ -1,0 +1,21 @@
+// pour créer une feuille de style personnalisée à partir de la trousse
+
+// 1 - importer les 2 modules suivants qui donnent accès au fonctions et jetons
+@use "modules/utils" as *;
+@use "modules/tokens" as *;
+// 2 - importer les jetons de conceptions
+@use "qc-design-tokens";
+
+// 3 - écrire vos styles en respectant 3 contraintes :
+
+.my-class {
+  // utiliser ce mixin pour les tailles de police : il s'assure d'ajouter la bonne hauteur de ligne…
+    @include content-font(md);
+  // utiliser la fonction token-value(<chemin>), cf la map $xl-token dans /scr/scss/settings/_tokens.scss pour
+  // les valeurs possibles
+    background-color: token-value(color white);
+  // utiliser la fonction rem() pour les tailles : indiquer la taille en pixel, la fonction calculera le résultat en rem
+  // dépendamment du :root.font-size.
+    padding: rem(23); 
+
+}

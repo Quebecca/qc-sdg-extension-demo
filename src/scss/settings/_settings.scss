@@ -1,0 +1,21 @@
+// Import des réglages de la trousse
+@use "vendor/trousse-sdg/src/scss/settings/settings" as *;
+// exposition des variables que l'on écrase
+@forward "vendor/trousse-sdg/src/scss/settings/settings";
+// modification des réglages pour nos besoins
+$percent-root-font-size: 100;
+$enable-grid-classes: false;
+// c'est ce fichier qui sera pris en compte lors de la compilation des scss suite à la définition
+// des chemins d'inclusion (includePaths) du compilateur sass dans rollup.js
+//
+// #rollup.js
+//const scssOptions = {
+//  ...
+//  includePaths: [
+//        'src/scss',
+//        'vendor/trousse-sdg',
+//        'vendor/trousse-sdg/src/scss',
+//        'vendor/trousse-sdg/node_modules',
+//    ],
+//    ...
+//};

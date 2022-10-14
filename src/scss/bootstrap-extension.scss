@@ -1,0 +1,33 @@
+// ici nous générons des css bootstrap personnalisées
+@use "modules/utils" as *;
+@use "modules/tokens" as *;
+@use "sass:map";
+
+// exemple pour écraser quelques couleurs…
+$blue:    map.get($xl-tokens, color, blue, regular);
+$indigo:  map.get($xl-tokens, color, blue, piv);
+$purple:  map.get($xl-tokens, color, purple);
+$pink:    map.get($xl-tokens, color, pink, regular);
+$red:     map.get($xl-tokens, color, red, regular);
+$yellow:  map.get($xl-tokens, color, yellow, regular);
+$green:   map.get($xl-tokens, color, green, regular);
+
+// et les espacements
+$spacers : (
+    0: 0,
+    1: rem( .5 * $base-spacer),
+    2: rem( $base-spacer),
+    3: rem( 2 * $base-spacer),
+    4: rem( 3 * $base-spacer),
+    5: rem( 6 * $base-spacer)
+);
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/utilities/api";
