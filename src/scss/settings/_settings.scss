@@ -13,9 +13,11 @@ $enable-grid-classes: false;
 //  ...
 //  includePaths: [
 //        'src/scss',
+//        'node_modules',
 //        'vendor/trousse-sdg',
-//        'vendor/trousse-sdg/src/scss',
+//        'vendor/trousse-sdg/src/sdg/scss',
 //        'vendor/trousse-sdg/node_modules',
+//        'vendor/trousse-sdg/vendor',
 //    ],
 //    ...
 //};
