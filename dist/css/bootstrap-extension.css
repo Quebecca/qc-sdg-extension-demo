@@ -1,6 +1,21 @@
+/*
+Return rem size from pixel size according to root font-size as define in settings
+Always use this function for rem values
+// root font-size : 100 %,
+// foo.scss
+.foo { font-size: rem(16); }
+// foo.css
+.foo { font-size: 1rem; }
+
+// root font-size : 62.5 %,
+// foo.scss
+.foo { font-size: rem(16); }
+// foo.css
+.foo { font-size: 1.6rem; }
+*/
 :root,
 [data-bs-theme=light] {
-  --bs-blue: #1479cc;
+  --bs-blue: #1472bf;
   --bs-indigo: #095797;
   --bs-purple: #6b4fa1;
   --bs-pink: #e58271;
@@ -23,7 +38,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #1479cc;
+  --bs-primary: #1472bf;
   --bs-secondary: #6c757d;
   --bs-success: #4f813d;
   --bs-info: #0dcaf0;
@@ -31,7 +46,7 @@
   --bs-danger: #cb381f;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 20, 121, 204;
+  --bs-primary-rgb: 20, 114, 191;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 79, 129, 61;
   --bs-info-rgb: 13, 202, 240;
@@ -39,7 +54,7 @@
   --bs-danger-rgb: 203, 56, 31;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
-  --bs-primary-text-emphasis: #083052;
+  --bs-primary-text-emphasis: #082e4c;
   --bs-secondary-text-emphasis: #2b2f32;
   --bs-success-text-emphasis: #203418;
   --bs-info-text-emphasis: #055160;
@@ -47,7 +62,7 @@
   --bs-danger-text-emphasis: #51160c;
   --bs-light-text-emphasis: #495057;
   --bs-dark-text-emphasis: #495057;
-  --bs-primary-bg-subtle: #d0e4f5;
+  --bs-primary-bg-subtle: #d0e3f2;
   --bs-secondary-bg-subtle: #e2e3e5;
   --bs-success-bg-subtle: #dce6d8;
   --bs-info-bg-subtle: #cff4fc;
@@ -55,7 +70,7 @@
   --bs-danger-bg-subtle: #f5d7d2;
   --bs-light-bg-subtle: #fcfcfd;
   --bs-dark-bg-subtle: #ced4da;
-  --bs-primary-border-subtle: #a1c9eb;
+  --bs-primary-border-subtle: #a1c7e5;
   --bs-secondary-border-subtle: #c4c8cb;
   --bs-success-border-subtle: #b9cdb1;
   --bs-info-border-subtle: #9eeaf9;
@@ -87,11 +102,11 @@
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #1479cc;
-  --bs-link-color-rgb: 20, 121, 204;
+  --bs-link-color: #1472bf;
+  --bs-link-color-rgb: 20, 114, 191;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #1061a3;
-  --bs-link-hover-color-rgb: 16, 97, 163;
+  --bs-link-hover-color: #105b99;
+  --bs-link-hover-color-rgb: 16, 91, 153;
   --bs-code-color: #e58271;
   --bs-highlight-bg: #f9efcd;
   --bs-border-width: 1px;
@@ -111,7 +126,7 @@
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   --bs-focus-ring-width: 0.25rem;
   --bs-focus-ring-opacity: 0.25;
-  --bs-focus-ring-color: rgba(20, 121, 204, 0.25);
+  --bs-focus-ring-color: rgba(20, 114, 191, 0.25);
   --bs-form-valid-color: #4f813d;
   --bs-form-valid-border-color: #4f813d;
   --bs-form-invalid-color: #cb381f;
@@ -134,7 +149,7 @@
   --bs-tertiary-color-rgb: 173, 181, 189;
   --bs-tertiary-bg: #2b3035;
   --bs-tertiary-bg-rgb: 43, 48, 53;
-  --bs-primary-text-emphasis: #72afe0;
+  --bs-primary-text-emphasis: #72aad9;
   --bs-secondary-text-emphasis: #a7acb1;
   --bs-success-text-emphasis: #95b38b;
   --bs-info-text-emphasis: #6edff6;
@@ -142,7 +157,7 @@
   --bs-danger-text-emphasis: #e08879;
   --bs-light-text-emphasis: #f8f9fa;
   --bs-dark-text-emphasis: #dee2e6;
-  --bs-primary-bg-subtle: #041829;
+  --bs-primary-bg-subtle: #041726;
   --bs-secondary-bg-subtle: #161719;
   --bs-success-bg-subtle: #101a0c;
   --bs-info-bg-subtle: #032830;
@@ -150,7 +165,7 @@
   --bs-danger-bg-subtle: #290b06;
   --bs-light-bg-subtle: #343a40;
   --bs-dark-bg-subtle: #1a1d20;
-  --bs-primary-border-subtle: #0c497a;
+  --bs-primary-border-subtle: #0c4473;
   --bs-secondary-border-subtle: #41464b;
   --bs-success-border-subtle: #2f4d25;
   --bs-info-border-subtle: #087990;
@@ -159,10 +174,10 @@
   --bs-light-border-subtle: #495057;
   --bs-dark-border-subtle: #343a40;
   --bs-heading-color: inherit;
-  --bs-link-color: #72afe0;
-  --bs-link-hover-color: #8ebfe6;
-  --bs-link-color-rgb: 114, 175, 224;
-  --bs-link-hover-color-rgb: 142, 191, 230;
+  --bs-link-color: #72aad9;
+  --bs-link-hover-color: #8ebbe1;
+  --bs-link-color-rgb: 114, 170, 217;
+  --bs-link-hover-color-rgb: 142, 187, 225;
   --bs-code-color: #efb4aa;
   --bs-border-color: #495057;
   --bs-border-color-translucent: rgba(255, 255, 255, 0.15);

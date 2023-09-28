@@ -12,8 +12,9 @@ const
             'src/scss',
             'node_modules',
             'vendor/trousse-sdg',
-            'vendor/trousse-sdg/src/scss',
+            'vendor/trousse-sdg/src/sdg/scss',
             'vendor/trousse-sdg/node_modules',
+            'vendor/trousse-sdg/vendor',
         ]
     };
 
@@ -21,10 +22,10 @@ exports.watch = gulp.parallel(
     () => gulp.watch(
         './src/scss/**/*.scss'
         , () =>  gulp
-        .src('./src/scss/**/*.scss')
-        .pipe(
-            sass(scssOptions)
-                .on('error', sass.logError)
-        )
-        .pipe( gulp.dest('./dist/css'))
+                .src('./src/scss/**/*.scss')
+                .pipe(
+                    sass(scssOptions)
+                        .on('error', sass.logError)
+                )
+                .pipe( gulp.dest('./dist/css'))
     ))

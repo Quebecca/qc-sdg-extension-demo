@@ -1,7 +1,7 @@
 // Import des réglages de la trousse
-@use "vendor/trousse-sdg/src/scss/settings/settings" as *;
+@use "vendor/trousse-sdg/src/sdg/scss/settings/settings" as *;
 // exposition des variables que l'on écrase
-@forward "vendor/trousse-sdg/src/scss/settings/settings";
+@forward "vendor/trousse-sdg/src/sdg/scss/settings/settings";
 // modification des réglages pour nos besoins
 $percent-root-font-size: 100;
 $enable-grid-classes: false;
