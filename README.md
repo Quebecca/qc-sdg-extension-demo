@@ -4,7 +4,7 @@
 
 Ce projet est un exemple d'extension de la trousse SDG, dans lequel :
 - on recompile la feuille de style qc-sdg.css avec un root-font-size de 100% (et non 62,5%) et sans le système de grille ;
-- on recompile quelques modules bootstrap en basant les réglages sur les jetons de conception de la trousse ;
+- on recompile quelques modules bootstrap en basant les réglages sur les jetons de design de la trousse ;
 - on compile une feuille de style personnalisée en utilisant jetons et fonctions de la la trousse.
 
 
@@ -43,9 +43,11 @@ const scssOptions = {
     // ...
     includePaths: [
         'src/scss',
-        'vendor/trousse-sdg',
-        'vendor/trousse-sdg/src/scss',
-        'vendor/trousse-sdg/node_modules',
+         'node_modules',
+         'vendor/trousse-sdg',
+         'vendor/trousse-sdg/src/sdg/scss',
+         'vendor/trousse-sdg/node_modules',
+         'vendor/trousse-sdg/vendor',
     ],
     // ...
 };
@@ -63,9 +65,9 @@ Ainsi, les directives `@use settings/settings` incluent en priorité le fichier 
 
 ```scss
 // Import des réglages de la trousse
-@use "vendor/trousse-sdg/src/scss/settings/settings" as *;
+@use "vendor/trousse-sdg/src/sdg/scss/settings/settings" as *;
 // exposition des variables que l'on écrase
-@forward "vendor/trousse-sdg/src/scss/settings/settings";
+@forward "vendor/trousse-sdg/src/sdg/scss/settings/settings";
 // modification des réglages pour nos besoins
 $percent-root-font-size: 100;
 $enable-grid-classes: false;
@@ -76,6 +78,6 @@ De cette façon, nous avons recompilé le css de la trousse, avec des réglages 
 
 Cf `src/scss/bootstrap-extension.scss`, qui suit les directives de https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults pour personnaliser Bootstrap.
 
-### Feuille de style personnalisée, basée sur les jetons de conception de la trousse
+### Feuille de style personnalisée, basée sur les jetons de design de la trousse
 
 Cf `src/scss/custom-stylesheet.scss` pour les instructions en commentaire.
