@@ -30,7 +30,7 @@ Always use this function for rem values
 // foo.css
 .foo { font-size: 1.6rem; }
 */
-:root {
+:root, :host {
   --qc-font-family-roboto: Roboto,sans-serif;
   --qc-font-family-open-sans: Open Sans,sans-serif;
   --qc-font-family-roboto-mono: Roboto Mono,monospace;
@@ -159,12 +159,12 @@ Always use this function for rem values
   --qc-grid-container-max-width-xl: 1200px;
 }
 @media (max-width: 1199.98px) {
-  :root {
+  :root, :host {
     --qc-grid-gutter: 24px;
   }
 }
 @media (max-width: 991.98px) {
-  :root {
+  :root, :host {
     --qc-font-size-h3: 1.5625rem;
     --qc-font-size-h2: 1.75rem;
     --qc-font-size-h1: 2.25rem;
@@ -175,11 +175,84 @@ Always use this function for rem values
   }
 }
 @media (max-width: 767.98px) {
-  :root {
+  :root, :host {
     --qc-grid-gutter: 16px;
   }
 }
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 :root {
   font-size: var(--qc-font-size-root-percent);
 }
@@ -482,7 +555,7 @@ ul ul {
 }
 
 .qc-shading-0 {
-  box-shadow: 0 0 0 var(--qc-box-shadow-color);
+  box-shadow: 0 0 0 var(--qc-color-grey-light);
 }
 
 .qc-shading-1, .qc-to-top {
@@ -490,15 +563,15 @@ ul ul {
 }
 
 .qc-shading-2, .qc-to-top:focus {
-  box-shadow: 0 2px 8px var(--qc-box-shadow-color);
+  box-shadow: 0 2px 8px var(--qc-color-grey-light);
 }
 
 .qc-shading-3 {
-  box-shadow: 0 4px 16px var(--qc-box-shadow-color);
+  box-shadow: 0 4px 16px var(--qc-color-grey-light);
 }
 
 .qc-shading-4 {
-  box-shadow: 0 6px 24px var(--qc-box-shadow-color);
+  box-shadow: 0 6px 24px var(--qc-color-grey-light);
 }
 
 /*
@@ -1064,7 +1137,7 @@ qc-piv-header [slot=links] a:focus, .qc-piv-header .piv-top .right-section .link
 @media (max-width: 767.98px) {
   .qc-piv-header .piv-top .logo img {
     min-width: 10.9375rem;
-    height: 4.125rem;
+    width: 10.9375rem;
   }
   .qc-piv-header .piv-top .title {
     display: none;
@@ -1244,4 +1317,10 @@ qc-alert [slot] a, qc-alert:not([slot=content]) a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+hr {
+  margin: var(--qc-spacer-lg) 0;
+  border: 0;
+  border-bottom: 1px solid var(--qc-color-grey-light);
 }

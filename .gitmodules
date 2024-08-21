@@ -1,4 +1,0 @@
-[submodule "vendor/trousse-sdg"]
-	path = vendor/trousse-sdg
-	url = git@github.com:Quebecca/qc_trousse_sdg.git
-	branch = main

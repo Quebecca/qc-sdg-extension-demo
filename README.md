@@ -11,9 +11,7 @@ Ce projet est un exemple d'extension de la trousse SDG, dans lequel :
 ## Installation
 Dans un terminal :
 - Cloner le projet : `git clone <url-github> && cd qc-sdg-extension`
-- Ajouter la trousse : `git submodule update --init --recursive`
-- Installer les dépendances de la trousse : `cd vendor/trousse-sdg && npm install`
-- Installer les dépendances du projet : `cd ../.. && npm install`
+- Installer les dépendances npm : `npm i`
 
 ### Developpement
 
@@ -43,11 +41,8 @@ const scssOptions = {
     // ...
     includePaths: [
         'src/scss',
-         'node_modules',
-         'vendor/trousse-sdg',
-         'vendor/trousse-sdg/src/sdg/scss',
-         'vendor/trousse-sdg/node_modules',
-         'vendor/trousse-sdg/vendor',
+        'node_modules/',
+        'node_modules/qc-trousse-sdg/src/sdg/scss',
     ],
     // ...
 };
@@ -61,13 +56,13 @@ Le fichier js `qc-sdg-reforged.scss` ne fait qu'importer le fichier `qc-sdg.scss
 ```
 
 Quand ce fichier est compilé, sass se base sur le chemin d'inclusion défini dans ses options de compilation et qui priorise les fichiers de l'extension.
-Ainsi, les directives `@use settings/settings` incluent en priorité le fichier `gc-sdg-extension/src/scss/settings/settings.scss` dans lequel on a écrasé les valeurs du root font-size.
+Ainsi, les directives `@use settings/settings` incluent en priorité le fichier `qc-sdg-extension/src/scss/settings/settings.scss` dans lequel on a écrasé les valeurs du root font-size.
 
 ```scss
 // Import des réglages de la trousse
-@use "vendor/trousse-sdg/src/sdg/scss/settings/settings" as *;
+@use "qc-trousse-sdg/src/sdg/scss/settings/settings" as *;
 // exposition des variables que l'on écrase
-@forward "vendor/trousse-sdg/src/sdg/scss/settings/settings";
+@forward "qc-trousse-sdg/src/sdg/scss/settings/settings";
 // modification des réglages pour nos besoins
 $percent-root-font-size: 100;
 $enable-grid-classes: false;

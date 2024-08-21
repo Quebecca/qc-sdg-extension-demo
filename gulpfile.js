@@ -10,11 +10,13 @@ const
             // le compilateur sass se basera sur les fichiers dans src/scss
             // en priorité. cf ./scr/scss/settings/_settings.scss
             'src/scss',
-            'node_modules',
-            'vendor/trousse-sdg',
-            'vendor/trousse-sdg/src/sdg/scss',
-            'vendor/trousse-sdg/node_modules',
-            'vendor/trousse-sdg/vendor',
+            // ici les chemins pour une installation dans un projet node.js
+            'node_modules/',
+            'node_modules/qc-trousse-sdg/src/sdg/scss',
+            // pour une installation comme dépendances dans un projet php avec composer
+            // ce serait alors les chemins suivants :
+            // 'vendor/qc/',
+            // 'vendor/qc/qc-trousse-sdg/src/sdg/scss',
         ]
     };
 

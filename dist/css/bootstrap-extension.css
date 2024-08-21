@@ -22,7 +22,7 @@ Always use this function for rem values
   --bs-red: #cb381f;
   --bs-orange: #fd7e14;
   --bs-yellow: #e0ad03;
-  --bs-green: #4f813d;
+  --bs-green: #2c4024;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -40,7 +40,7 @@ Always use this function for rem values
   --bs-gray-900: #212529;
   --bs-primary: #1472bf;
   --bs-secondary: #6c757d;
-  --bs-success: #4f813d;
+  --bs-success: #2c4024;
   --bs-info: #0dcaf0;
   --bs-warning: #e0ad03;
   --bs-danger: #cb381f;
@@ -48,7 +48,7 @@ Always use this function for rem values
   --bs-dark: #212529;
   --bs-primary-rgb: 20, 114, 191;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 79, 129, 61;
+  --bs-success-rgb: 44, 64, 36;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 224, 173, 3;
   --bs-danger-rgb: 203, 56, 31;
@@ -56,7 +56,7 @@ Always use this function for rem values
   --bs-dark-rgb: 33, 37, 41;
   --bs-primary-text-emphasis: #082e4c;
   --bs-secondary-text-emphasis: #2b2f32;
-  --bs-success-text-emphasis: #203418;
+  --bs-success-text-emphasis: #121a0e;
   --bs-info-text-emphasis: #055160;
   --bs-warning-text-emphasis: #5a4501;
   --bs-danger-text-emphasis: #51160c;
@@ -64,7 +64,7 @@ Always use this function for rem values
   --bs-dark-text-emphasis: #495057;
   --bs-primary-bg-subtle: #d0e3f2;
   --bs-secondary-bg-subtle: #e2e3e5;
-  --bs-success-bg-subtle: #dce6d8;
+  --bs-success-bg-subtle: #d5d9d3;
   --bs-info-bg-subtle: #cff4fc;
   --bs-warning-bg-subtle: #f9efcd;
   --bs-danger-bg-subtle: #f5d7d2;
@@ -72,7 +72,7 @@ Always use this function for rem values
   --bs-dark-bg-subtle: #ced4da;
   --bs-primary-border-subtle: #a1c7e5;
   --bs-secondary-border-subtle: #c4c8cb;
-  --bs-success-border-subtle: #b9cdb1;
+  --bs-success-border-subtle: #abb3a7;
   --bs-info-border-subtle: #9eeaf9;
   --bs-warning-border-subtle: #f3de9a;
   --bs-danger-border-subtle: #eaafa5;
@@ -127,8 +127,8 @@ Always use this function for rem values
   --bs-focus-ring-width: 0.25rem;
   --bs-focus-ring-opacity: 0.25;
   --bs-focus-ring-color: rgba(20, 114, 191, 0.25);
-  --bs-form-valid-color: #4f813d;
-  --bs-form-valid-border-color: #4f813d;
+  --bs-form-valid-color: #2c4024;
+  --bs-form-valid-border-color: #2c4024;
   --bs-form-invalid-color: #cb381f;
   --bs-form-invalid-border-color: #cb381f;
 }
@@ -151,7 +151,7 @@ Always use this function for rem values
   --bs-tertiary-bg-rgb: 43, 48, 53;
   --bs-primary-text-emphasis: #72aad9;
   --bs-secondary-text-emphasis: #a7acb1;
-  --bs-success-text-emphasis: #95b38b;
+  --bs-success-text-emphasis: #808c7c;
   --bs-info-text-emphasis: #6edff6;
   --bs-warning-text-emphasis: #ecce68;
   --bs-danger-text-emphasis: #e08879;
@@ -159,7 +159,7 @@ Always use this function for rem values
   --bs-dark-text-emphasis: #dee2e6;
   --bs-primary-bg-subtle: #041726;
   --bs-secondary-bg-subtle: #161719;
-  --bs-success-bg-subtle: #101a0c;
+  --bs-success-bg-subtle: #090d07;
   --bs-info-bg-subtle: #032830;
   --bs-warning-bg-subtle: #2d2301;
   --bs-danger-bg-subtle: #290b06;
@@ -167,7 +167,7 @@ Always use this function for rem values
   --bs-dark-bg-subtle: #1a1d20;
   --bs-primary-border-subtle: #0c4473;
   --bs-secondary-border-subtle: #41464b;
-  --bs-success-border-subtle: #2f4d25;
+  --bs-success-border-subtle: #1a2616;
   --bs-info-border-subtle: #087990;
   --bs-warning-border-subtle: #866802;
   --bs-danger-border-subtle: #7a2213;
@@ -181,8 +181,8 @@ Always use this function for rem values
   --bs-code-color: #efb4aa;
   --bs-border-color: #495057;
   --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
-  --bs-form-valid-color: #95b38b;
-  --bs-form-valid-border-color: #95b38b;
+  --bs-form-valid-color: #808c7c;
+  --bs-form-valid-border-color: #808c7c;
   --bs-form-invalid-color: #e08879;
   --bs-form-invalid-border-color: #e08879;
 }
