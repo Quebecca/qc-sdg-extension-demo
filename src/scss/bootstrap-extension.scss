@@ -1,6 +1,5 @@
 // ici nous générons des css bootstrap personnalisées
-@use "modules/utils" as *;
-@use "modules/tokens" as *;
+@use "qc-sdg-lib" as *;
 @use "sass:map";
 
 // exemple pour écraser quelques couleurs…

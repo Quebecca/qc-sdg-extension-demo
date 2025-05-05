@@ -1,21 +1,71 @@
 // pour créer une feuille de style personnalisée à partir de la trousse
 
-// 1 - importer les 2 modules suivants qui donnent accès aux fonctions et jetons
-@use "modules/utils" as *;
-@use "modules/tokens" as *;
-// 2 - importer les jetons de conceptions
+// 0 - importer les jetons de conceptions si pas déjà inclus par ailleurs
 @use "qc-design-tokens";
 
-// 3 - écrire vos styles en respectant 3 contraintes :
+// 1 - importer qc-sdg-lib de la trousse, qui donne accès à toute l'api : fonctions, mixins, classe abstraites (%foo), settings
+@use "qc-sdg-lib" as *;
 
+// 2 - écrire vos styles, en utilisant l'api de la trousse
+// cf lib/_function et lib/_mixins
+
+.my-pseudo-header {
+    @include header-font(md);
+}
+h2.h3 {
+    /* un h2 avec l'apparence du h3 */
+    @include heading(3);
+}
 .my-class {
-  // utiliser ce mixin pour les tailles de police : il s'assure d'ajouter la bonne hauteur de ligne…
+    /* toujours utiliser cette fonction pour gérer la taille de police
+       car elle ajuste aussi la hauteur de ligne.
+     */
     @include content-font(md);
-  // utiliser la fonction token-value(<chemin>), cf la map $xl-token dans /scr/scss/settings/_tokens.scss pour
-  // les valeurs possibles
-    background-color: token-value(color white);
-  // utiliser la fonction rem() pour les tailles : indiquer la taille en pixel, la fonction calculera le résultat en rem
-  // dépendamment du :root.font-size.
-    padding: rem(23); 
+
+
+    // utiliser la fonction token-value(<chemin>), cf la map $xl-token dans /scr/scss/settings/_tokens.scss pour
+    // les valeurs possibles.
+    background-color: token-value(background text);
+    // utiliser la fonction rem() pour les tailles : indiquer la taille en pixel, la fonction calculera le résultat en rem
+    // dépendamment du :root.font-size.
+    padding: rem(23); // 23px
+
+    /* fonctions de grille */
+
+    @include media-mobile() {
+        /* @include media-mobile() */
+    }
+;
+    @include media-tablet() {
+        /* @include media-tablet() */
+    }
+;
+    @include media-desktop() {
+        /* @include media-desktop() */
+    }
+
+    @include media-large-desktop() {
+        /* @include media-desktop() */
+    }
+
+    /* les fonctions de bootstrap sont aussi disponibles */
+    @each $resolution in mobile, tablet, desktop {
+        @include media-breakpoint-up($resolution) {
+            /* @include media-breakpoint-up(#{$resolution}) { */
+        }
+        @include media-breakpoint-down($resolution) {
+            /* @include media-breakpoint-down(#{$resolution}) { */
+        }
+    }
+
+    /* pour ce qui est destiné aux lecteurs d'écran seulement */
+    .sr-only {
+        @include sr-only();
+    }
+
+    .ombrage-1 {
+        /* voir aussi base/_shading */
+        @include qc-shading(1);
+    }
 
 }

@@ -1,7 +1,7 @@
 // Import des réglages de la trousse, depuis  installée comme dépendance
-@use "qc-trousse-sdg/src/sdg/scss/settings/settings" as *;
+@use "qc-trousse-sdg/src/sdg/scss/settings/base" as *;
 // exposition des variables que l'on écrase
-@forward "qc-trousse-sdg/src/sdg/scss/settings/settings";
+@forward "qc-trousse-sdg/src/sdg/scss/settings/base";
 // modification des réglages pour nos besoins
 $percent-root-font-size: 100;
 $enable-grid-classes: false;
