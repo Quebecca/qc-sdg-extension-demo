@@ -33,23 +33,23 @@ h2.h3 {
     /* fonctions de grille */
 
     @include media-mobile() {
-        /* @include media-mobile() */
+        /* @include media-mobile(); // raccourci pour media-breakpoint-down(mobile)*/
     }
 ;
     @include media-tablet() {
-        /* @include media-tablet() */
+        /* @include media-tablet(); // raccourci pour media-breakpoint-down(tablet)*/
     }
 ;
     @include media-desktop() {
-        /* @include media-desktop() */
+        /* @include media-desktop(); // raccourci pour media-breakpoint-up(desktop)*/
     }
 
     @include media-large-desktop() {
-        /* @include media-desktop() */
+        /* @include media-large-desktop(); // raccourci pour media-breakpoint-up(large-desktop)*/
     }
 
-    /* les fonctions de bootstrap sont aussi disponibles */
-    @each $resolution in mobile, tablet, desktop {
+    /* les fonctions de bootstrap sont aussi disponibles, et peuvent être utilisées avec les valeurs mobile, tablet, desktop et large-desktop, en plus de sm,md,lg et xl */
+    @each $resolution in mobile, tablet, desktop, large-desktop {
         @include media-breakpoint-up($resolution) {
             /* @include media-breakpoint-up(#{$resolution}) { */
         }

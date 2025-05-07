@@ -254,28 +254,29 @@ h2.h3 {
   background-color: var(--qc-background-text);
   padding: 1.4375rem;
   /* fonctions de grille */
-  /* les fonctions de bootstrap sont aussi disponibles */
+  /* les fonctions de bootstrap sont aussi disponibles, et peuvent être utilisées avec les valeurs mobile, tablet, desktop et large-desktop, en plus de sm,md,lg et xl */
   /* @include media-breakpoint-up(mobile) { */
+  /* @include media-breakpoint-down(large-desktop) { */
   /* pour ce qui est destiné aux lecteurs d'écran seulement */
 }
 @media (max-width: 767.98px) {
   .my-class {
-    /* @include media-mobile() */
+    /* @include media-mobile(); // raccourci pour media-breakpoint-down(mobile)*/
   }
 }
 @media (max-width: 991.98px) {
   .my-class {
-    /* @include media-tablet() */
+    /* @include media-tablet(); // raccourci pour media-breakpoint-down(tablet)*/
   }
 }
 @media (min-width: 992px) {
   .my-class {
-    /* @include media-desktop() */
+    /* @include media-desktop(); // raccourci pour media-breakpoint-up(desktop)*/
   }
 }
 @media (min-width: 1200px) {
   .my-class {
-    /* @include media-desktop() */
+    /* @include media-large-desktop(); // raccourci pour media-breakpoint-up(large-desktop)*/
   }
 }
 @media (max-width: 767.98px) {
@@ -301,6 +302,11 @@ h2.h3 {
 @media (max-width: 1199.98px) {
   .my-class {
     /* @include media-breakpoint-down(desktop) { */
+  }
+}
+@media (min-width: 1200px) {
+  .my-class {
+    /* @include media-breakpoint-up(large-desktop) { */
   }
 }
 .my-class .sr-only {
