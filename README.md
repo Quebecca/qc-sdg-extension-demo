@@ -11,11 +11,11 @@ Ce projet est un exemple d'extension de la trousse SDG, dans lequel :
 ## Installation
 Dans un terminal :
 - Cloner le projet : `git clone <url-github> && cd qc-sdg-extension`
-- Installer les dépendances npm : `npm i`
+- Installer les dépendances : `yarn` (la trousse SDG impose yarn ; un `npm i` est refusé par son garde `only-allow yarn`)
 
 ### Developpement
 
-- lancer la commande `npm run start`
+- lancer la commande `yarn start`
 
 Toute modification d'une scss sera dès lors compilée à la volée.
 

@@ -7,7 +7,9 @@
 @use "qc-sdg-lib" as *;
 
 // 2 - écrire vos styles, en utilisant l'api de la trousse
-// cf lib/_function et lib/_mixins
+// cf lib/_functions.scss (fonctions) et lib/_mixins.scss (mixins) de la trousse,
+// exposés via qc-sdg-lib -> @forward "lib/gridless-lib" (qui forward lib/functions) + "lib/mixins".
+// chemin réel : node_modules/qc-trousse-sdg/src/sdg/scss/
 
 .my-pseudo-header {
     @include header-font(md);
@@ -19,12 +21,18 @@ h2.h3 {
 .my-class {
     /* toujours utiliser cette fonction pour gérer la taille de police
        car elle ajuste aussi la hauteur de ligne.
+       signature : content-font($scale, $weight, $include-family)
+         - $scale          : sm | md | lg | xl (taille + hauteur de ligne)
+         - $weight         : regular | medium | semi-bold | bold
+         - $include-family : 1 pour forcer la famille de police de contenu, 0 sinon (défaut)
      */
     @include content-font(md);
+    // exemple avec tous les paramètres (gras + famille de contenu explicite) :
+    // @include content-font(md, bold, 1);
 
 
-    // utiliser la fonction token-value(<chemin>), cf la map $xl-token dans /scr/scss/settings/_tokens.scss pour
-    // les valeurs possibles.
+    // utiliser la fonction token-value(<chemin>), cf la map $xl-tokens dans la trousse
+    // (node_modules/qc-trousse-sdg/src/sdg/scss/settings/_tokens.scss) pour les valeurs possibles.
     background-color: token-value(background text);
     // utiliser la fonction rem() pour les tailles : indiquer la taille en pixel, la fonction calculera le résultat en rem
     // dépendamment du :root.font-size.
@@ -58,6 +66,11 @@ h2.h3 {
         }
     }
 
+    /* intervalle borné entre deux points de rupture (bornes incluses) */
+    @include media-breakpoint-between(tablet, desktop) {
+        /* styles appliqués de tablet à desktop */
+    }
+
     /* pour ce qui est destiné aux lecteurs d'écran seulement */
     .sr-only {
         @include sr-only();
@@ -68,4 +81,22 @@ h2.h3 {
         @include qc-shading(1);
     }
 
+}
+
+/* --- autres mixins de l'api de la trousse --- */
+
+/* base typographique des icônes Material Symbols de la trousse ;
+   ajouter ensuite le glyphe voulu via content (ex. "search"). */
+.mon-icone {
+    @include icon-font-base();
+    &::before { content: "search"; }
+}
+
+/* dark-theme() prend un @content : ce qu'on y place n'est émis que sous
+   le sélecteur du thème sombre (.qc-dark-theme), quand $enable-dark-theme est vrai. */
+.ma-carte {
+    background-color: token-value(background text);
+    @include dark-theme() {
+        background-color: token-value(color text primary);
+    }
 }

@@ -1,0 +1,31 @@
+name: CI
+
+# Valide que l'exemple compile avec la trousse SDG.
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+
+jobs:
+  build:
+    name: Compilation SCSS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du dépôt
+        uses: actions/checkout@v4
+
+      - name: Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      # La trousse SDG est yarn-only (garde only-allow yarn), et elle est
+      # consommée ici en dépendance git (github:Quebecca/qc_trousse_sdg#develop),
+      # donc l'installation DOIT passer par yarn.
+      - name: Installation des dépendances (yarn)
+        run: yarn install --frozen-lockfile
+
+      # yarn build => gulp build : compilation stricte, échoue si une scss ne compile pas.
+      - name: Compilation des feuilles de style
+        run: yarn build
