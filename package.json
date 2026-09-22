@@ -4,7 +4,8 @@
   "description": "Exemple d'extension de la Trousse SDG",
   "main": "index.js",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
