@@ -7,12 +7,12 @@
   --qc-font-family-header: var(--qc-font-family-roboto);
   --qc-font-family-code: var(--qc-font-family-roboto-mono);
   --qc-font-size-root-percent: 100%;
-  --qc-font-size-h6: 1rem;
-  --qc-font-size-h5: 1.1875rem;
-  --qc-font-size-h4: 1.3125rem;
-  --qc-font-size-h3: 1.75rem;
-  --qc-font-size-h2: 2.25rem;
-  --qc-font-size-h1: 3rem;
+  --qc-font-size-heading-xxl: 3rem;
+  --qc-font-size-heading-xl: 2.25rem;
+  --qc-font-size-heading-lg: 1.75rem;
+  --qc-font-size-heading-md: 1.25rem;
+  --qc-font-size-heading-sm: 1.125rem;
+  --qc-font-size-heading-xs: 1rem;
   --qc-font-size-90: 0.875rem;
   --qc-font-size-100: 1rem;
   --qc-font-size-120: 1.125rem;
@@ -32,12 +32,12 @@
   --qc-font-weight-content-regular: var(--qc-font-weight-regular);
   --qc-font-weight-content-medium: var(--qc-font-weight-semi-bold);
   --qc-font-weight-content-bold: var(--qc-font-weight-bold);
-  --qc-line-height-h6: 1.25rem;
-  --qc-line-height-h5: 1.5rem;
-  --qc-line-height-h4: 1.5rem;
-  --qc-line-height-h3: 2rem;
-  --qc-line-height-h2: 2.5rem;
-  --qc-line-height-h1: 3.5rem;
+  --qc-line-height-heading-xxl: 3.5rem;
+  --qc-line-height-heading-xl: 2.5rem;
+  --qc-line-height-heading-lg: 2rem;
+  --qc-line-height-heading-md: 1.5rem;
+  --qc-line-height-heading-sm: 1.5rem;
+  --qc-line-height-heading-xs: 1.25rem;
   --qc-line-height-90: 1.25rem;
   --qc-line-height-100: 1.5rem;
   --qc-line-height-120: 1.75rem;
@@ -84,8 +84,12 @@
   --qc-color-pink-regular-rgb: 229, 130, 113;
   --qc-color-red-pale: var(--qc-color-pink-pale);
   --qc-color-red-light: var(--qc-color-pink-regular);
+  --qc-color-red-regular_light: #eb705a;
+  --qc-color-red-regular_light-rgb: 235, 112, 90;
   --qc-color-red-regular: #cb381f;
   --qc-color-red-regular-rgb: 203, 56, 31;
+  --qc-color-red-medium: #b52e16;
+  --qc-color-red-medium-rgb: 181, 46, 22;
   --qc-color-red-dark: #692519;
   --qc-color-red-dark-rgb: 105, 37, 25;
   --qc-color-green-pale: #d7f0bb;
@@ -125,12 +129,25 @@
   --qc-box_shadow-3-offset: 4px;
   --qc-box_shadow-4-blur: 24px;
   --qc-box_shadow-4-offset: 6px;
+  --qc-spacer-1: 0.5rem;
+  --qc-spacer-2: 1rem;
+  --qc-spacer-3: 1.5rem;
+  --qc-spacer-4: 2rem;
+  --qc-spacer-5: 2.5rem;
+  --qc-spacer-6: 3rem;
+  --qc-spacer-7: 3.5rem;
+  --qc-spacer-8: 4rem;
+  --qc-spacer-9: 4.5rem;
+  --qc-spacer-10: 5rem;
+  --qc-spacer-11: 5.5rem;
+  --qc-spacer-12: 6rem;
   --qc-spacer-xs: 0.5rem;
   --qc-spacer-sm: 1rem;
   --qc-spacer-md: 1.5rem;
   --qc-spacer-lg: 3rem;
   --qc-spacer-xl: 6rem;
   --qc-spacer-section: var(--qc-spacer-xl);
+  --qc-spacer-main-mb: 4.5rem;
   --qc-spacer-h1-mt: 4.5rem;
   --qc-spacer-h1-mb: 2rem;
   --qc-spacer-h2-mt: 4.5rem;
@@ -146,6 +163,13 @@
   --qc-spacer-content-block-mb: var(--qc-spacer-md);
   --qc-spacer-list-pl: var(--qc-spacer-sm);
   --qc-spacer-list-item-mb: var(--qc-spacer-sm);
+  --qc-size-max-width-xs: 3.9375rem;
+  --qc-size-max-width-sm: 9.75rem;
+  --qc-size-max-width-md: 15.5625rem;
+  --qc-size-max-width-lg: 33rem;
+  --qc-size-max-width-xl: 51.5625rem;
+  --qc-size-textarea-min-height: 6.75rem;
+  --qc-size-search-bar-max-width: 40rem;
   --qc-grid-gutter: 32px;
   --qc-grid-breakpoint-xs: 0;
   --qc-grid-breakpoint-sm: 768px;
@@ -154,6 +178,18 @@
   --qc-grid-container-max-width-sm: 768px;
   --qc-grid-container-max-width-md: 992px;
   --qc-grid-container-max-width-lg: 1200px;
+  --qc-font-size-h1: 3rem;
+  --qc-font-size-h2: 2.25rem;
+  --qc-font-size-h3: 1.75rem;
+  --qc-font-size-h4: 1.25rem;
+  --qc-font-size-h5: 1.125rem;
+  --qc-font-size-h6: 1rem;
+  --qc-line-height-h1: 3.5rem;
+  --qc-line-height-h2: 2.5rem;
+  --qc-line-height-h3: 2rem;
+  --qc-line-height-h4: 1.5rem;
+  --qc-line-height-h5: 1.5rem;
+  --qc-line-height-h6: 1.25rem;
 }
 @media (max-width: 1199.98px) {
   :root {
@@ -204,8 +240,12 @@
   --qc-color-pink-pale-rgb: 79, 24, 14;
   --qc-color-pink-regular: #BB3A23;
   --qc-color-pink-regular-rgb: 187, 58, 35;
+  --qc-color-red-regular_light: #D34027;
+  --qc-color-red-regular_light-rgb: 211, 64, 39;
   --qc-color-red-regular: #F26049;
   --qc-color-red-regular-rgb: 242, 96, 73;
+  --qc-color-red-medium: #F19387;
+  --qc-color-red-medium-rgb: 241, 147, 135;
   --qc-color-red-dark: #F3BCB6;
   --qc-color-red-dark-rgb: 243, 188, 182;
   --qc-color-green-pale: #1E2F17;
@@ -247,6 +287,10 @@ h2.h3 {
 .my-class {
   /* toujours utiliser cette fonction pour gérer la taille de police
      car elle ajuste aussi la hauteur de ligne.
+     signature : content-font($scale, $weight, $include-family)
+       - $scale          : sm | md | lg | xl (taille + hauteur de ligne)
+       - $weight         : regular | medium | semi-bold | bold
+       - $include-family : 1 pour forcer la famille de police de contenu, 0 sinon (défaut)
    */
   font-size: var(--qc-font-size-md);
   line-height: var(--qc-line-height-md);
@@ -254,10 +298,6 @@ h2.h3 {
   background-color: var(--qc-background-text);
   padding: 1.4375rem;
   /* fonctions de grille */
-  /* les fonctions de bootstrap sont aussi disponibles, et peuvent être utilisées avec les valeurs mobile, tablet, desktop et large-desktop, en plus de sm,md,lg et xl */
-  /* @include media-breakpoint-up(mobile) { */
-  /* @include media-breakpoint-down(large-desktop) { */
-  /* pour ce qui est destiné aux lecteurs d'écran seulement */
 }
 @media (max-width: 767.98px) {
   .my-class {
@@ -278,6 +318,10 @@ h2.h3 {
   .my-class {
     /* @include media-large-desktop(); // raccourci pour media-breakpoint-up(large-desktop)*/
   }
+}
+.my-class {
+  /* les fonctions de bootstrap sont aussi disponibles, et peuvent être utilisées avec les valeurs mobile, tablet, desktop et large-desktop, en plus de sm,md,lg et xl */
+  /* @include media-breakpoint-up(mobile) { */
 }
 @media (max-width: 767.98px) {
   .my-class {
@@ -309,6 +353,18 @@ h2.h3 {
     /* @include media-breakpoint-up(large-desktop) { */
   }
 }
+.my-class {
+  /* @include media-breakpoint-down(large-desktop) { */
+  /* intervalle borné entre deux points de rupture (bornes incluses) */
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .my-class {
+    /* styles appliqués de tablet à desktop */
+  }
+}
+.my-class {
+  /* pour ce qui est destiné aux lecteurs d'écran seulement */
+}
 .my-class .sr-only {
   position: absolute;
   width: 1px;
@@ -323,4 +379,28 @@ h2.h3 {
 .my-class .ombrage-1 {
   /* voir aussi base/_shading */
   box-shadow: 0 var(--qc-box_shadow-1-offset) var(--qc-box_shadow-1-blur) var(--qc-color-box_shadow);
+}
+
+/* --- autres mixins de l'api de la trousse --- */
+/* base typographique des icônes Material Symbols de la trousse ;
+   ajouter ensuite le glyphe voulu via content (ex. "search"). */
+.mon-icone {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+.mon-icone::before {
+  content: "search";
+}
+
+/* dark-theme() prend un @content : ce qu'on y place n'est émis que sous
+   le sélecteur du thème sombre (.qc-dark-theme), quand $enable-dark-theme est vrai. */
+.ma-carte {
+  background-color: var(--qc-background-text);
+}
+.qc-dark-theme .ma-carte, :root.qc-dark-theme .ma-carte {
+  background-color: var(--qc-color-text-primary);
 }
